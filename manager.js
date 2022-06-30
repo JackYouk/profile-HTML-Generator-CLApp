@@ -1,3 +1,26 @@
+const Employee = require('./employee');
+
+
+
+
+class Manager extends Employee{
+    constructor(name, id, email, officeNum){
+        super(name, id, email);
+        this.officeNum = officeNum;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
 // menu object
 const menu = {
     message: 'Add team members/Finish building team?',
