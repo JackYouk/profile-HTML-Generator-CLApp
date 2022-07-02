@@ -4,10 +4,6 @@ class Employee{
         this.id = id;
         this.email = email;
     }
-
-    inquiry(){
-
-    }
 }
 
 module.exports = Employee;
