@@ -9,6 +9,7 @@ class Intern extends Employee{
         super(name, id, email);
         this.school = school;
     }
+    // returns string with HTML code for card
     writeCard(){
         return `
             <div class="card m-3" style="width: 18rem;">
@@ -24,6 +25,7 @@ class Intern extends Employee{
     }
 }
 
+module.exports = Intern;
 
 
 
@@ -33,37 +35,37 @@ class Intern extends Employee{
 
 
 
-// intern =======================
-// intern questions array
-const internQuestions = [
-    {
-        message: 'Intern name?',
-        name: 'internName',
-        type: 'input',
-    },
-    {
-        message: 'Intern ID?',
-        name: 'internID',
-        type: 'input',
-    },
-    {
-        message: 'Intern email?',
-        name: 'internEmail',
-        type: 'input',
-    },
-    {
-        message: 'Intern school?',
-        name: 'internSchool',
-        type: 'input',
-    },
-    menu,
-];
-// intern inquiry
-let internData;
-function internInquiry(){
-    inquirer
-        .prompt(internQuestions)
-        .then((answers) => {
-            internData = answers;
-        })
-}
+// // intern =======================
+// // intern questions array
+// const internQuestions = [
+//     {
+//         message: 'Intern name?',
+//         name: 'internName',
+//         type: 'input',
+//     },
+//     {
+//         message: 'Intern ID?',
+//         name: 'internID',
+//         type: 'input',
+//     },
+//     {
+//         message: 'Intern email?',
+//         name: 'internEmail',
+//         type: 'input',
+//     },
+//     {
+//         message: 'Intern school?',
+//         name: 'internSchool',
+//         type: 'input',
+//     },
+//     menu,
+// ];
+// // intern inquiry
+// let internData;
+// function internInquiry(){
+//     inquirer
+//         .prompt(internQuestions)
+//         .then((answers) => {
+//             internData = answers;
+//         })
+// }

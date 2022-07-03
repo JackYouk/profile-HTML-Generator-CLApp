@@ -8,6 +8,7 @@ class Manager extends Employee{
         super(name, id, email);
         this.officeNum = officeNum;
     }
+    // returns string with HTML code for card
     writeCard(){
         return `
             <div class="card m-3" style="width: 18rem;">
@@ -21,10 +22,9 @@ class Manager extends Employee{
             </div>
         `
     }
-
-
 }
 
+module.exports = Manager;
 
 
 
@@ -33,47 +33,46 @@ class Manager extends Employee{
 
 
 
-
-// menu object
-const menu = {
-    message: 'Add team members/Finish building team?',
-    name: 'menuSelection',
-    type: 'list',
-    choices: ['Add engineer', 'Add intern', 'Finish'],
-}
-// manager =============================
-// manager questions array
-const managerQuestions = [
-    {
-        message: 'Team Manager name?',
-        name: 'managerName',
-        type: 'input',
-    },
-    {
-        message: 'Team Manager employee ID?',
-        name: 'managerID',
-        type: 'input',
-    },
-    {
-        message: 'Team Manager email?',
-        name: 'managerEmail',
-        type: 'input',
-    },
-    {
-        message: 'Team Manager office number?',
-        name: 'managerOffice',
-        type: 'input',
-    },
-    {
-        message: 'Team Manager office number?',
-        name: 'managerOffice',
-        type: 'input',
-    },
-    menu,
-];
-// manager inquiery
-inquirer
-    .prompt(managerQuestions)
-    .then((answers) => {
+// // menu object
+// const menu = {
+//     message: 'Add team members/Finish building team?',
+//     name: 'menuSelection',
+//     type: 'list',
+//     choices: ['Add engineer', 'Add intern', 'Finish'],
+// }
+// // manager =============================
+// // manager questions array
+// const managerQuestions = [
+//     {
+//         message: 'Team Manager name?',
+//         name: 'managerName',
+//         type: 'input',
+//     },
+//     {
+//         message: 'Team Manager employee ID?',
+//         name: 'managerID',
+//         type: 'input',
+//     },
+//     {
+//         message: 'Team Manager email?',
+//         name: 'managerEmail',
+//         type: 'input',
+//     },
+//     {
+//         message: 'Team Manager office number?',
+//         name: 'managerOffice',
+//         type: 'input',
+//     },
+//     {
+//         message: 'Team Manager office number?',
+//         name: 'managerOffice',
+//         type: 'input',
+//     },
+//     menu,
+// ];
+// // manager inquiery
+// inquirer
+//     .prompt(managerQuestions)
+//     .then((answers) => {
         
-    })
+//     })
