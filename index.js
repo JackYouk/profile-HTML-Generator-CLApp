@@ -114,19 +114,55 @@ function inquiry(){
             // add manager card html code to html code string
             htmlCode += manager.writeCard();
 
-            // if (menu input) then {finish, add employee}
-            if(managerAnswers.menuSelection === 'Add engineer'){
-                // engineer inquiry
+            // menu cb
+            let menuCB = (employeeAnswers) => {
+                // if (menu input) then {finish, add employee}
+                if(employeeAnswers.menuSelection === 'Add engineer'){
+                    // engineer inquiry
+                    inquirer
+                        .prompt(engQuestions)
+                        .then((engAnswers) => {
+                            // add eng answers to html code
+                            let engName = engAnswers.engName;
+                            let engID = engAnswers.engID;
+                            let engEmail = engAnswers.engEmail;
+                            let engGithub = engAnswers.engGithub;
+                            // declare eng using eng class
+                            let engineer = new Engineer(engName, engID, engEmail, engGithub);
+                            // add engineer card html code to html code string
+                            htmlCode += engineer.writeCard();
+                            // init menu for engineer inquiry
+                            menuCB(engAnswers);
+                        })
 
-            }else if(managerAnswers.menuSelection === 'Add intern'){
-                // intern inquiry
-                
-            }else{
-                // finish selected --> end inquiry
-                return;
+                    return;
+                }else if(employeeAnswers.menuSelection === 'Add intern'){
+                    // intern inquiry
+                    inquirer
+                    .prompt(internQuestions)
+                    .then((internAnswers) => {
+                        // add eng answers to html code
+                        let internName = internAnswers.internName;
+                        let internID = internAnswers.internID;
+                        let internEmail = internAnswers.internEmail;
+                        let internSchool = internAnswers.internSchool;
+                        // declare intern using intern class
+                        let intern = new Intern(internName, internID, internEmail, internSchool);
+                        // add internineer card html code to html code string
+                        htmlCode += intern.writeCard();
+                        // init menu for internineer inquiry
+                        menuCB(internAnswers);
+                    })
+
+                    return;
+                }else{
+                    // finish selected --> end inquiry
+                    return;
+                }
             }
+            // init menu for manager inquiry
+            menuCB(managerAnswers);
         })
-    
 }
 
 
