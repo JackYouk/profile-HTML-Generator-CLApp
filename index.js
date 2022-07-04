@@ -44,6 +44,18 @@ let genHtmlCode = (content) => {
     return htmlCode;
 }
 
+// fs write file function ----------------------------------------------------------------------------
+function writeHtmlFile(){
+    let htmlCode = genHtmlCode(htmlContent);
+    fs.writeFile(`employeeProfiles.html`, htmlCode, err => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        console.log('success');
+      })
+}
+
 // inquirer ------------------------------------------------------------------------------------------
 function inquiry(){
     // menu questions object ===============
@@ -186,7 +198,9 @@ function inquiry(){
 
                     return;
                 }else{
-                    // finish selected --> end inquiry
+                    // finish selected --> write html file, end inquiry
+                    // html fs.writefile init
+                    writeHtmlFile();
                     return;
                 }
             }
@@ -198,17 +212,6 @@ function inquiry(){
 // init inquiry
 inquiry();
 
-// fs write file -------------------------------------------------------------------------------------
-function writeHtmlFile(){
-    let htmlCode = genHtmlCode(htmlContent);
-    fs.writeFile(`employeeProfiles.html`, htmlCode, err => {
-        if (err) {
-          console.log(err);
-          return;
-        }
-        console.log('success');
-      })
-}
-// html fs.writefile init
-writeHtmlFile();
+
+
 
