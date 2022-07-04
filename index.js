@@ -76,11 +76,6 @@ function inquiry(){
             name: 'managerOffice',
             type: 'input',
         },
-        {
-            message: 'Team Manager office number?',
-            name: 'managerOffice',
-            type: 'input',
-        },
         menu,
     ];
     // engineer ===========================
@@ -204,11 +199,16 @@ function inquiry(){
 inquiry();
 
 // fs write file -------------------------------------------------------------------------------------
-let htmlCode = genHtmlCode(htmlContent);
-fs.writeFile(`employeeProfiles.html`, htmlCode, err => {
-    if (err) {
-      console.log(err);
-      return;
-    }
-    console.log('success');
-  })
+function writeHtmlFile(){
+    let htmlCode = genHtmlCode(htmlContent);
+    fs.writeFile(`employeeProfiles.html`, htmlCode, err => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        console.log('success');
+      })
+}
+// html fs.writefile init
+writeHtmlFile();
+
