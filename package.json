@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "directories": {
-    "test": "tests"
+    "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JackYouk/profile-HTML-Generator-CLApp.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
