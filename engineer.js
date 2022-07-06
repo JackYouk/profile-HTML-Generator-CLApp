@@ -19,6 +19,12 @@ class Engineer extends Employee{
             </div>
         `
     }
+    getRole(){
+        return 'Engineer';
+    }
+    getGithub(){
+        return this.github;
+    }
 }
 
 module.exports = Engineer;

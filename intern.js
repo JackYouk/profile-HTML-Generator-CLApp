@@ -20,6 +20,12 @@ class Intern extends Employee{
             </div>
         `
     }
+    getRole(){
+        return 'Intern';
+    }
+    getSchool(){
+        return this.school;
+    }
 }
 
 module.exports = Intern;
