@@ -13,8 +13,8 @@ class Engineer extends Employee{
                     <h5 class="card-title">${this.name}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Engineer</h6>
                     <p class="card-text">ID: ${this.id}</p>
-                    <a href="${this.email}" class="card-link">Email</a>
-                    <a href="github.com/${this.github}" class="card-link">GitHub</a>
+                    <a href="mailto:${this.email}" class="card-link">Email</a>
+                    <a href="https://github.com/${this.github}" class="card-link">GitHub</a>
                 </div>
             </div>
         `
